@@ -2,9 +2,9 @@ package step2;
 
 public class Calculator {
 
-    String[][] history = new String[20][4];
+    String[][] historys = new String[20][4];
     int index = 0;
-    //계산기록을 저장할 리스트와 행번호를 메길 index
+    //계산기록을 저장할 2차원 행렬과 행번호를 매기기 위한 index
 
     int sum (int num1, int num2, String sign) {
         int result = 0;
@@ -30,20 +30,22 @@ public class Calculator {
         }
         // switch에서 한번에 결과값까지 출력하는것이 더 깔끔해보임
 
-        history[index][0] = String.valueOf(num1);
-        history[index][1] = sign;
-        history[index][2] = String.valueOf(num2);
-        history[index][3] = String.valueOf(result);
+        historys[index][0] = String.valueOf(num1);
+        historys[index][1] = sign;
+        historys[index][2] = String.valueOf(num2);
+        historys[index][3] = String.valueOf(result);
         // TODO : 문자형 배열에 정수값이 안들어가서 정수를 문자형으로 변환후 대입
 
         index++;
 
         return result;
+        // 계산 결과 return
     }
 
 
-    public String[][] getHistory() {
-        return history;
+    String[][] getHistory() {
+        return this.historys;
     }
-    // 계산기록 return
+    // 계산기록 return getter 적용
 }
+

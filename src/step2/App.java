@@ -8,6 +8,7 @@ public class App {
         System.out.println("Hello, Calculator!");
         Scanner sc = new Scanner(System.in);
         Calculator calculator = new Calculator();
+        // 객체 생성
 
         int i = 0;
 
@@ -35,7 +36,7 @@ public class App {
             else{
                 System.out.println("부호가 잘못 입력 되었습니다.");
             }
-
+            // switch는 사용했으니 else if 사용해보기
 
 
             String emptybox = sc.nextLine();
