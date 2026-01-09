@@ -28,27 +28,32 @@ public class App {
             switch (sign) {
                 case "+":
                     result = num1 + num2;
+                    System.out.println("결과: " + result);
                     break;
                 case "-":
                     result = num1 - num2;
+                    System.out.println("결과: " + result);
                     break;
                 case "*":
                     result = num1 * num2;
+                    System.out.println("결과: " + result);
                     break;
                 case "/":
                     result = num1 / num2;
+                    System.out.println("결과: " + result);
                     break;
                 case "%":
                     result = num1 % num2;
+                    System.out.println("결과: " + result);
                     break;
+                default:
+                    System.out.println("부호가 잘못 입력되었습니다.");
             }
-
-            System.out.println("결과: " + result);
 
             String emptybox = sc.nextLine();
             // enter 제거용
 
-            System.out.print("더 계산하시겠습니까?(exit입력시 종료) ");
+            System.out.print("계속 계산하시겠습니까?(exit 입력 시 종료): ");
             String word = sc.nextLine();
 
             if (word.equals("exit")) {
