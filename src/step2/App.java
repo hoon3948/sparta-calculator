@@ -9,6 +9,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         Calculator calculator = new Calculator();
 
+        int i = 0;
 
         while (true) {
             System.out.print("계산할 부호를 입력하세요( +, -, *, /, % ): ");
@@ -22,17 +23,49 @@ public class App {
 
             int result = calculator.sum(num1, num2, sign);
 
+            if(sign.equals("+") || sign.equals("-") ){
+                System.out.println("결과: " + result);
+            }
+            else if(sign.equals("*") || sign.equals("/")){
+                System.out.println("결과: " + result);
+            }
+            else if (sign.equals("%")) {
+                System.out.println("결과: " + result);
+            }
+            else{
+                System.out.println("부호가 잘못 입력 되었습니다.");
+            }
+
+
+
             String emptybox = sc.nextLine();
             // enter 제거용
 
             System.out.print("더 계산하시겠습니까?(exit입력시 종료) ");
             String word = sc.nextLine();
-
             if (word.equals("exit")) {
                 System.out.println("계산을 종료합니다...");
                 break;
             }
 
+            i++;
+
+        }
+
+        System.out.print("계산 목록을 보시겠습니까?(list 입력시 출력): ");
+        String list = sc.nextLine();
+
+        // 계산기록 행렬 불러오기
+        String[][] history = calculator.getHistory();
+        if (list.equals("list")) {
+            for (int count = 0; count<=i; count++) {
+                System.out.println(
+                        history[count][0] + " "
+                        + history[count][1] + " "
+                        + history[count][2] + " = "
+                        + history[count][3]
+                );
+            }
         }
 
     }
