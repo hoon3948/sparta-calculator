@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello, Calculator!");
         Scanner sc = new Scanner(System.in);
         Calculator calculator = new Calculator();
         // 객체 생성
@@ -77,7 +76,7 @@ public class App {
             }
         }
         int delenum = 0;
-        while(true){
+        while(i >= 0){
             System.out.print("오래된 계산 기록을 지우시겠습니까?(delete 입력시 삭제): ");
             String dele = sc.nextLine();
 
@@ -85,7 +84,7 @@ public class App {
                 System.out.println( ++delenum + "번째 기록을 삭제합니다...");
                 calculator.removeResult();
 
-//                i--;
+               i--;
 //                for (int count = 0; count<=i; count++) {
 //                    System.out.println(
 //                            data.get(count)[0] + " "
@@ -98,10 +97,9 @@ public class App {
 
             }
             else{
-                System.out.println("프로그램을 종료합니다...");
                 break;
             }
         }
-
+        System.out.println("프로그램을 종료합니다...");
     }
 }
