@@ -1,6 +1,7 @@
 package step2;
 
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
@@ -57,14 +58,28 @@ public class App {
         String list = sc.nextLine();
 
         // 계산기록 행렬 불러오기
-        String[][] history = calculator.getHistory();
+//        String[][] history = calculator.getHistory();
+//        if (list.equals("list")) {
+//            for (int count = 0; count<=i; count++) {
+//                System.out.println(
+//                        history[count][0] + " "
+//                        + history[count][1] + " "
+//                        + history[count][2] + " = "
+//                        + history[count][3]
+//                );
+//            }
+//        }
+//    // 2차원 배열 Arraylist로 변경
+
+
+        ArrayList<String[]> data = calculator.getData();
         if (list.equals("list")) {
             for (int count = 0; count<=i; count++) {
                 System.out.println(
-                        history[count][0] + " "
-                        + history[count][1] + " "
-                        + history[count][2] + " = "
-                        + history[count][3]
+                        data.get(count)[0] + " "
+                        + data.get(count)[1] + " "
+                        + data.get(count)[2] + " = "
+                        + data.get(count)[3]
                 );
             }
         }
