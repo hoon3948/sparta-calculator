@@ -63,5 +63,9 @@ public class Calculator {
     }
     // 계산기록 return getter 적용
 
+    public void removeResult() {
+        data.remove(0);
+    }
+
 }
 

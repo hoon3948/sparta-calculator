@@ -76,5 +76,32 @@ public class App {
                 );
             }
         }
+        int delenum = 0;
+        while(true){
+            System.out.print("오래된 계산 기록을 지우시겠습니까?(delete 입력시 삭제): ");
+            String dele = sc.nextLine();
+
+            if (dele.equals("delete")) {
+                System.out.println( ++delenum + "번째 기록을 삭제합니다...");
+                calculator.removeResult();
+
+//                i--;
+//                for (int count = 0; count<=i; count++) {
+//                    System.out.println(
+//                            data.get(count)[0] + " "
+//                            + data.get(count)[1] + " "
+//                            + data.get(count)[2] + " = "
+//                            + data.get(count)[3]
+//                    );
+//                }
+                // 삭제 확인용
+
+            }
+            else{
+                System.out.println("프로그램을 종료합니다...");
+                break;
+            }
+        }
+
     }
 }
