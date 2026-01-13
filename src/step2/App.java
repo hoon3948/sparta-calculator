@@ -14,24 +14,31 @@ public class App {
         int i = 0;
 
         while (true) {
-            System.out.print("계산할 부호를 입력하세요( +, -, *, /, % ): ");
-            String sign = sc.nextLine();
-
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int num1 = sc.nextInt();
+
+            System.out.print("계산할 부호를 입력하세요( +, -, *, /, % ): ");
+            char sign = sc.next().charAt(0);
 
             System.out.print("두 번째 숫자를 입력하세요: ");
             int num2 = sc.nextInt();
 
-            int result = calculator.sum(num1, num2, sign);
+            if((sign == '/' || sign == '%') && (num2 == 0)) {
+                System.out.println("0으로 나눌 수 없습니다");
+                continue;
+            }
 
-            if(sign.equals("+") || sign.equals("-") ){
+            calculator.setElement(num1, num2, sign);
+//            calculator.sum(num1, num2, sign);
+            int result = calculator.getResult();
+
+            if(sign == '+' || sign == '-' ){
                 System.out.println("결과: " + result);
             }
-            else if(sign.equals("*") || sign.equals("/")){
+            else if(sign == '*'){
                 System.out.println("결과: " + result);
             }
-            else if (sign.equals("%")) {
+            else if (sign == '/' || sign == '%') {
                 System.out.println("결과: " + result);
             }
             else{
@@ -58,20 +65,6 @@ public class App {
         String list = sc.nextLine();
 
         // 계산기록 행렬 불러오기
-//        String[][] history = calculator.getHistory();
-//        if (list.equals("list")) {
-//            for (int count = 0; count<=i; count++) {
-//                System.out.println(
-//                        history[count][0] + " "
-//                        + history[count][1] + " "
-//                        + history[count][2] + " = "
-//                        + history[count][3]
-//                );
-//            }
-//        }
-//    // 2차원 배열 Arraylist로 변경
-
-
         ArrayList<String[]> data = calculator.getData();
         if (list.equals("list")) {
             for (int count = 0; count<=i; count++) {
@@ -83,7 +76,5 @@ public class App {
                 );
             }
         }
-
     }
-
 }
